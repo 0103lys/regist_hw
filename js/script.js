@@ -21,7 +21,7 @@ function sendit(){
     // 정규표현식
     const expNameText = /[가-힣]+$/; // 한글의 범위
     const expPwText = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*\W)/;
-    const expHpText = /^\d{3}\d{3,4}\d{4}$/;
+    const expHpText = /^(010)(\d{3,4})(\d{4})$/;
     const expEmailText = /^[A-Za-z0-9\.\_]+@[A-Za-z0-9\.\_]+\.[A-Za-z0-9]+$/;
 
     // 아이디를 입력하지 않았을 경우
@@ -63,7 +63,7 @@ function sendit(){
     }
 
     if(!expHpText.test(hp.value)){
-        alert('휴대폰번호 형식을 확인하세요\n (-)을 제외한 휴대폰번호를 입력하세요');
+        alert('휴대폰번호 형식을 확인하세요\n(-)을 제외한 휴대폰번호를 입력하세요\n휴대폰번호는 010으로 시작해야합니다.');
         hp.focus();
         return false;
     }
